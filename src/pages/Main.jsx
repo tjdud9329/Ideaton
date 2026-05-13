@@ -94,6 +94,7 @@ const Main = () => {
             </div>
           ))}
         </div>
+        ㄴ
       </section>
 
       {/* 3. AI 개인화 피드 */}
