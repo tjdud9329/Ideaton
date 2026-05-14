@@ -1,44 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const RecipeItem = ({ item }) => {
-  if (!item) return null;
+const RecipeItem = ({ name, amount, isSubstitutable, alternatives = [] }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col w-[160px] cursor-pointer shrink-0">
-      {/* 레시피 이미지 및 북마크 */}
-      <div className="relative w-full h-[120px] bg-[#E5E5E5] rounded-xl overflow-hidden">
-        {item.image && (
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover"
-          />
-        )}
-        {/* 북마크 아이콘 (흰색 선) */}
-        <div className="absolute top-[10px] right-[10px]">
-          <svg width="20" height="20" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 21V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H15C15.5304 1 16.0391 1.21071 16.4142 1.58579C16.7893 1.96086 17 2.46957 17 3V21L9 16L1 21Z" 
-                  stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+    <div className="w-full border-b border-[#F4F4F4]">
+      {/* 재료 행 */}
+      <div 
+        className="flex justify-between items-center py-[14px] cursor-pointer"
+        onClick={() => isSubstitutable && setIsOpen(!isOpen)}
+      >
+        <div className="relative inline-block">
+          {/* 텍스트와 동일한 색상의 실선 밑줄 적용 */}
+          <span className={`text-[16px] text-[#333333] ${isSubstitutable ? 'border-b border-[#333333]' : ''}`}>
+            {name}
+          </span>
         </div>
+        <div className="text-[16px] text-[#A3A3A3]">{amount}</div>
       </div>
 
-      {/* 제목 */}
-      <span className="font-bold text-[16px] text-[#333333] mt-[12px] truncate">
-        {item.title}
-      </span>
-
-      {/* 난이도 및 시간 태그 */}
-      <div className="flex gap-[6px] mt-[8px]">
-        <div className="flex items-center gap-[4px] bg-[#F4F4F4] px-[8px] py-[4px] rounded-md text-[11px] text-[#555555]">
-          <span>☆</span>
-          <span>{item.level}</span>
+      {/* 클릭 시 나타나는 리스트 */}
+      {isOpen && isSubstitutable && (
+        <div className="bg-[#F9F9F9] px-[16px] py-[12px] mb-[10px] rounded-lg border border-[#E5E5E5]">
+          <p className="text-[12px] text-[#999999] font-bold mb-[8px]">대체 가능한 재료</p>
+          <div className="flex flex-col gap-[6px]">
+            {alternatives.map((alt, idx) => (
+              <div key={idx} className="flex justify-between text-[14px]">
+                <span className="text-[#555555]">{alt.name}</span>
+                <span className="text-[#A3A3A3]">{alt.price}원</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center gap-[4px] bg-[#F4F4F4] px-[8px] py-[4px] rounded-md text-[11px] text-[#555555]">
-          <span>🕒</span>
-          <span>{item.time}</span>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
