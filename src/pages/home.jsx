@@ -3,7 +3,7 @@ import SeasonalCard from '../components/SeasonalCard';
 import RecipeCard from '../components/RecipeCard';
 import Navbar from '../components/Layouts/Navbar';
 import bellIcon from '../assets/Icon/bellIcon.svg';
-import chevronIcon from '../assets/Icon/chevronIcon.svg';
+import chevronIcon from '../assets/Icon/chevron-rightIcon.svg';
 import { MyIngredients, Seasonal, Recipes } from '../mocks/Mockdata';
 
 const Home = () => {
@@ -26,10 +26,15 @@ const Home = () => {
           2026년 5월 봄 시즌
         </p>
       </div>
-      <div className="flex w-full h-[60px] mt-[32px] gap-[12px] items-center cursor-pointer overflow-x-auto no-scrollbar">
-        {MyIngredients.map((item) => (
-          <MyIngredientCard key={item.id} item={item} />
-        ))}
+      <div className="w-full mt-[18px]">
+        <p className="text-[#828282] text-[14px]">
+          유통기한이 얼마 남지 않았어요
+        </p>
+        <div className="flex w-full h-[60px] gap-[12px] mt-[8px] items-center cursor-pointer overflow-x-auto no-scrollbar">
+          {MyIngredients.map((item) => (
+            <MyIngredientCard key={item.id} item={item} />
+          ))}
+        </div>
       </div>
 
       <div className="w-full mt-[20px]">

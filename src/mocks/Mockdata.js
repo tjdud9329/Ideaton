@@ -49,3 +49,23 @@ export const Recipes = [
     image: soddlehlswkdrnr,
   },
 ];
+
+export const RecipeIngredients = [
+  { id: 1, name: '봄동', amount: '100g (1단)', isSubstitutable: false },
+  { id: 2, name: '밥', amount: '200g (1공기)', isSubstitutable: false },
+  { id: 3, name: '고추장', amount: '2 숟가락', isSubstitutable: false },
+  {
+    id: 4,
+    name: '매실청',
+    amount: '1T 스푼',
+    isSubstitutable: true,
+    alternatives: [
+      { name: '설탕', price: '1T 스푼' },
+      { name: '올리고당', price: '1T 스푼' },
+    ],
+  },
+  { id: 5, name: '된장', amount: '1T 스푼', isSubstitutable: false },
+  { id: 6, name: '고춧가루', amount: '2.5 숟가락', isSubstitutable: false },
+  { id: 7, name: '멸치액젓', amount: '1.5T 스푼', isSubstitutable: false },
+  { id: 8, name: '참기름', amount: '2T 스푼', isSubstitutable: false },
+];
