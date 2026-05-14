@@ -4,19 +4,51 @@ import RecipeCard from '../components/RecipeCard';
 import Navbar from '../components/Layouts/Navbar';
 import bellIcon from '../assets/bellIcon.svg';
 import chevronIcon from '../assets/chevronIcon.svg';
+import didqocn from '../assets/양배추.png';
+import clwm from '../assets/치즈.png';
+import aotlf from '../assets/매실.png';
+import dhdl from '../assets/오이.png';
+import qhaehdqlqlaqkq from '../assets/봄동비빔밥.png';
+import soddlehlswkdrnr from '../assets/냉이된장국.png';
 
 const MOCK_DATA = {
   Myingredients: [
-    { id: 1, name: '양배추', weight: '400g', day: '2' },
-    { id: 2, name: '치즈', weight: '50g', day: '8' },
+    { id: 1, name: '양배추', weight: '400g', day: '2', image: didqocn },
+    { id: 2, name: '치즈', weight: '50g', day: '8', image: clwm },
   ],
   Seasonal: [
-    { id: 1, name: '매실', weight: '1kg', site: '사이트', price: '30000' },
-    { id: 2, name: '오이', weight: '1개', site: '사이트', price: '1000' },
+    {
+      id: 1,
+      name: '매실',
+      weight: '1kg',
+      site: '사이트',
+      price: '11900',
+      image: aotlf,
+    },
+    {
+      id: 2,
+      name: '오이',
+      weight: '1개',
+      site: '사이트',
+      price: '1000',
+      image: dhdl,
+    },
   ],
   Recipes: [
-    { id: 1, title: '봄동 비빔밥', level: '초급', time: '10분' },
-    { id: 2, title: '냉이 된장국', level: '중급', time: '20분' },
+    {
+      id: 1,
+      title: '봄동 비빔밥',
+      level: '초급',
+      time: '10분',
+      image: qhaehdqlqlaqkq,
+    },
+    {
+      id: 2,
+      title: '냉이 된장국',
+      level: '중급',
+      time: '20분',
+      image: soddlehlswkdrnr,
+    },
   ],
 };
 
@@ -41,8 +73,8 @@ const Home = () => {
         </p>
       </div>
       <div className="flex max-w-[474px] h-[60px] mt-[32px] gap-[12px] item-center cursor-pointer">
-        {MOCK_DATA.Myingredients.map((item, index) => (
-          <MyIngredientCard key={index} />
+        {MOCK_DATA.Myingredients.map((item) => (
+          <MyIngredientCard key={item.id} item={item} />
         ))}
       </div>
 
@@ -54,8 +86,8 @@ const Home = () => {
           </div>
         </div>
         <div className="mt-[12px] flex flex-col gap-[12px] cursor-pointer">
-          {MOCK_DATA.Seasonal.map((item, index) => (
-            <SeasonalCard key={index} />
+          {MOCK_DATA.Seasonal.map((item) => (
+            <SeasonalCard key={item.id} item={item} />
           ))}
         </div>
       </div>
@@ -68,8 +100,8 @@ const Home = () => {
           </div>
         </div>
         <div className="mt-[12px] flex gap-[12px] cursor-pointer">
-          {MOCK_DATA.Recipes.map((item, index) => (
-            <RecipeCard key={index} />
+          {MOCK_DATA.Recipes.map((item) => (
+            <RecipeCard key={item.id} item={item} />
           ))}
         </div>
       </div>
