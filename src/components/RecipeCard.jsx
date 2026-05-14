@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // 1. 페이지 이동을 위한 훅 임포트
 
 const RecipeCard = ({ item }) => {
+  const navigate = useNavigate(); // 2. navigate 함수 선언
+
   if (!item) return null;
 
   return (
-    <div className="flex flex-col w-[160px] cursor-pointer shrink-0">
+    <div 
+      className="flex flex-col w-[160px] cursor-pointer shrink-0"
+      // 3. 클릭 시 해당 레시피의 id를 가지고 상세 페이지로 이동
+      onClick={() => navigate(`/recipe/${item.id}`)} 
+    >
       {/* 레시피 썸네일 이미지 영역 */}
       <div className="relative w-full h-[120px] bg-[#E5E5E5] rounded-xl overflow-hidden">
         {item.image ? (

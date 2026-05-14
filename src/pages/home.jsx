@@ -11,7 +11,7 @@ import dhdl from '../assets/오이.png';
 import qhaehdqlqlaqkq from '../assets/봄동비빔밥.png';
 import soddlehlswkdrnr from '../assets/냉이된장국.png';
 
-const MOCK_DATA = {
+export const MOCK_DATA = {
   Myingredients: [
     { id: 1, name: '양배추', weight: '400g', day: '2', image: didqocn },
     { id: 2, name: '치즈', weight: '50g', day: '8', image: clwm },
