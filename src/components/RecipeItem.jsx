@@ -4,33 +4,34 @@ const RecipeItem = ({ name, amount, isSubstitutable, alternatives = [] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full border-b border-[#F4F4F4]">
-      {/* 재료 행 */}
+    <div className="w-full flex flex-col bg-white">
+      {/* 메인 재료 행: 높이 40px, 패딩 상하 8px, 좌우 16px */}
       <div 
-        className="flex justify-between items-center py-[14px] cursor-pointer"
+        className={`flex justify-between items-center h-[40px] px-[16px] cursor-pointer ${
+          isOpen && isSubstitutable ? 'border-b border-dashed border-[#999999]' : 'border-b border-[#999999]'
+        }`}
         onClick={() => isSubstitutable && setIsOpen(!isOpen)}
       >
         <div className="relative inline-block">
-          {/* 텍스트와 동일한 색상의 실선 밑줄 적용 */}
-          <span className={`text-[16px] text-[#333333] ${isSubstitutable ? 'border-b border-[#333333]' : ''}`}>
+          <span className={`text-[16px] text-[#333333] leading-[150%] ${isSubstitutable ? 'border-b border-solid border-[#333333]' : ''}`}>
             {name}
           </span>
         </div>
-        <div className="text-[16px] text-[#A3A3A3]">{amount}</div>
+        <div className="text-[16px] text-[#999999] leading-[150%] tracking-[-0.02em]">{amount}</div>
       </div>
 
-      {/* 클릭 시 나타나는 리스트 */}
+      {/* 대체 재료 영역: 하단 실선으로 마감 */}
       {isOpen && isSubstitutable && (
-        <div className="bg-[#F9F9F9] px-[16px] py-[12px] mb-[10px] rounded-lg border border-[#E5E5E5]">
-          <p className="text-[12px] text-[#999999] font-bold mb-[8px]">대체 가능한 재료</p>
-          <div className="flex flex-col gap-[6px]">
-            {alternatives.map((alt, idx) => (
-              <div key={idx} className="flex justify-between text-[14px]">
-                <span className="text-[#555555]">{alt.name}</span>
-                <span className="text-[#A3A3A3]">{alt.price}원</span>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col bg-white">
+          {alternatives.map((alt, idx) => (
+            <div 
+              key={idx} 
+              className="flex justify-between items-center h-[40px] pl-[32px] pr-[16px] border-b border-solid border-[#999999]"
+            >
+              <span className="text-[16px] text-[#666666] leading-[150%]">{alt.name}</span>
+              <span className="text-[16px] text-[#999999] leading-[150%]">{alt.amount}</span>
+            </div>
+          ))}
         </div>
       )}
     </div>
