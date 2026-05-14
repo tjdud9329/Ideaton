@@ -1,6 +1,6 @@
 import MyIngredientCard from '../components/MyIngredientCard';
 import SeasonalCard from '../components/SeasonalCard';
-import RecipeItem from '../components/RecipeItem';
+import RecipeCard from '../components/RecipeCard';
 import Navbar from '../components/Layouts/Navbar';
 import bellIcon from '../assets/bellIcon.svg';
 import chevronIcon from '../assets/chevronIcon.svg';
@@ -69,7 +69,7 @@ const Home = () => {
         </div>
         <div className="mt-[12px] flex gap-[12px] cursor-pointer">
           {MOCK_DATA.Recipes.map((item, index) => (
-            <RecipeItem key={index} />
+            <RecipeCard key={index} />
           ))}
         </div>
       </div>
