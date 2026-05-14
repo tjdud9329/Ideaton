@@ -1,9 +1,9 @@
-import homeBIcon from '../../assets/homeBIcon.svg';
-import homeGIcon from '../../assets/homeGIcon.svg';
-import upIcon from '../../assets/upIcon.svg';
-import cameraIcon from '../../assets/cameraIcon.svg';
-import archiveIcon from '../../assets/archiveIcon.svg';
-import profileIcon from '../../assets/profileIcon.svg';
+import homeBIcon from '../../assets/Icon/homeBIcon.svg';
+import homeGIcon from '../../assets/Icon/homeGIcon.svg';
+import upIcon from '../../assets/Icon/upIcon.svg';
+import cameraIcon from '../../assets/Icon/cameraIcon.svg';
+import archiveIcon from '../../assets/Icon/archiveIcon.svg';
+import profileIcon from '../../assets/Icon/profileIcon.svg';
 
 const Navbar = () => {
   return (
