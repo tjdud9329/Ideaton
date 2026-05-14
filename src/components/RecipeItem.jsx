@@ -1,9 +1,5 @@
 const RecipeItem = () => {
-    return  (
-        <div>
-        RecipeItem
-        </div>
-    );
-}
+  retrun(<div>RecipeItem</div>);
+};
 
 export default RecipeItem;
