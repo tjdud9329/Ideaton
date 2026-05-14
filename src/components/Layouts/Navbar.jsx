@@ -1,7 +1,7 @@
 import homeBIcon from '../../assets/homeBIcon.svg';
 import homeGIcon from '../../assets/homeGIcon.svg';
 import upIcon from '../../assets/upIcon.svg';
-import cameraIcon from '../../assets/archiveIcon.svg';
+import cameraIcon from '../../assets/cameraIcon.svg';
 import archiveIcon from '../../assets/archiveIcon.svg';
 import profileIcon from '../../assets/profileIcon.svg';
 

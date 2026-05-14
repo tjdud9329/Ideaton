@@ -1,9 +1,5 @@
 const SeasonalCard = () => {
-    return (
-        <div>
-            SeasonalCard
-        </div>
-    );
-}
+  return <div>SeasonalCard</div>;
+};
 
 export default SeasonalCard;
