@@ -1,20 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./pages/home";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from './pages/home';
 
 function App() {
   return (
     <BrowserRouter>
-      {/* 1. 레이아웃 감싸기: Routes 바깥에 위치해야 함 */}
-      <div className="min-h-screen bg-gray-100 flex justify-center">
-        <div className="relative w-full max-w-[430px] min-h-screen bg-white shadow-2xl flex flex-col">
-          
+      {/* 배경색을 주어 아이폰 프레임이 돋보이게 합니다 */}
+      <div className="min-h-screen bg-gray-200 flex justify-center">
+        {/* 아이폰 13 기준 너비: 390px */}
+        <div className="relative w-full max-w-[390px] min-h-screen bg-white shadow-2xl flex flex-col overflow-x-hidden">
           <Routes>
-            {/* 2. Route 컴포넌트의 첫 글자는 반드시 대문자(Route)여야 합니다 */}
             <Route path="/" element={<Main />} />
-            {/* 나중에 다른 페이지가 추가되면 여기에 계속 작성 */}
             {/* <Route path="/login" element={<Login />} /> */}
           </Routes>
-          
         </div>
       </div>
     </BrowserRouter>
