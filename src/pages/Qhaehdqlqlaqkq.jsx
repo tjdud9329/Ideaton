@@ -4,7 +4,7 @@ import RecipeItem from '../components/RecipeItem';
 
 // 1. 서영님이 정리한 Food 및 Icon 폴더 경로를 정확히 반영합니다.
 import bomdongImg from '../assets/Food/봄동비빔밥.png';
-import chevronIcon from '../assets/Icon/chevronIcon.svg';
+import chevronRightIcon from '../assets/Icon/chevron-rightIcon.svg';
 import bookmarkIcon from '../assets/Icon/bookmarkIcon.svg';
 import plusIcon from '../assets/Icon/plusIcon.svg';
 import minusIcon from '../assets/Icon/minusIcon.svg';
@@ -25,7 +25,7 @@ const Qhaehdqlqlaqkq = () => {
       {/* 3. Header: 높이 44px, 꺽쇠 방향 180도 회전 */}
       <div className="h-[44px] px-[16px] flex justify-between items-center border-b-[0.4px] border-black/20">
         <button onClick={() => navigate(-1)}>
-          <img src={chevronIcon} alt="back" className="w-6 h-6 rotate-180" />
+          <img src={chevronRightIcon} alt="back" className="w-6 h-6 rotate-180" />
         </button>
         <button>
           <img src={bookmarkIcon} alt="save" className="w-6 h-6" />
