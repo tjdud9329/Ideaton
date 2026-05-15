@@ -5,6 +5,14 @@ import Navbar from '../components/Layouts/Navbar';
 import bellIcon from '../assets/Icon/bellIcon.svg';
 import chevronIcon from '../assets/Icon/chevron-rightIcon.svg';
 import { MyIngredients, Seasonal, Recipes } from '../mocks/Mockdata';
+import { useEffect } from 'react';
+
+const usePageTitle = (title) => {
+  useEffect(() => {
+    const $title = document.getElementsByTagName('메인화면')[0];
+    $title.innerText = title;
+  }, [title]);
+};
 
 const Home = () => {
   return (
