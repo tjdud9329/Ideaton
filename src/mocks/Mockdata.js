@@ -1,11 +1,11 @@
-import didqocn from '../assets/Food/양배추.png';
-import clwm from '../assets/Food/치즈.png';
-import Eomuk from '../assets/Food/어묵.png';
-import Largegreenonion from '../assets/Food/대파.png';
-import aotlf from '../assets/Food/매실.png';
-import dhdl from '../assets/Food/오이.png';
-import qhaehdqlqlaqkq from '../assets/Food/봄동비빔밥.png';
-import soddlehlswkdrnr from '../assets/Food/냉이된장국.png';
+import didqocn from '../assets/Food/cabbage.png';
+import clwm from '../assets/Food/cheese.png';
+import Eomuk from '../assets/Food/fishcake.png';
+import Largegreenonion from '../assets/Food/green-onion.png';
+import aotlf from '../assets/Food/plum.png';
+import dhdl from '../assets/Food/cucumber.png';
+import qhaehdqlqlaqkq from '../assets/Food/bomdong-bibimbap.png';
+import soddlehlswkdrnr from '../assets/Food/naengi-soup.png';
 
 export const MyIngredients = [
   { id: 1, name: '양배추', weight: '400g', day: '2', image: didqocn },

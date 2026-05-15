@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import RecipeItem from '../components/RecipeItem';
 // assets에서 실제 이미지를 불러옵니다.
-import naengiImg from '../assets/Food/냉이된장국.png';
+import naengiImg from '../assets/Food/naengi-soup.png';
 
 const Soddlehlswkdrnr = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import RecipeItem from '../components/RecipeItem';
 
 // 필요한 에셋들 (서영님이 정리한 경로 기준)
-import bomdongImg from '../assets/Food/봄동비빔밥.png';
+import bomdongImg from '../assets/Food/bomdong-bibimbap.png';
 import chevronRightIcon from '../assets/Icon/chevron-rightIcon.svg';
 import bookmarkIcon from '../assets/Icon/bookmarkIcon.svg';
 import plusIcon from '../assets/Icon/plusIcon.svg';
@@ -17,7 +17,6 @@ const Qhaehdqlqlaqkq = () => {
   return (
     // 전체 컨테이너에 max-w-[390px]와 mx-auto를 주어 중앙 정렬을 유지합니다.
     <div className="flex flex-col min-h-screen bg-white relative overflow-x-hidden font-['Pretendard'] max-w-[390px] mx-auto border-x border-gray-100">
-      
       {/* 1. Status Bar (53px) */}
       <div className="h-[53px] w-full pt-[18px] pr-[26px] pb-[14px] pl-[27px] flex justify-between items-end">
         <span className="text-[15px] font-bold tracking-[-0.02em]">9:41</span>
@@ -27,7 +26,11 @@ const Qhaehdqlqlaqkq = () => {
       {/* 2. Header (44px) */}
       <div className="h-[44px] px-[16px] flex justify-between items-center border-b-[0.4px] border-black/20">
         <button onClick={() => navigate(-1)}>
-          <img src={chevronRightIcon} alt="back" className="w-6 h-6 rotate-180" />
+          <img
+            src={chevronRightIcon}
+            alt="back"
+            className="w-6 h-6 rotate-180"
+          />
         </button>
         <button>
           <img src={bookmarkIcon} alt="save" className="w-6 h-6" />
@@ -37,7 +40,11 @@ const Qhaehdqlqlaqkq = () => {
       <div className="overflow-y-auto pb-[150px]">
         {/* 3. 이미지 영역 (342px) */}
         <div className="w-full h-[342px] bg-[#D9D9D9]">
-          <img src={bomdongImg} alt="봄동 비빔밥" className="w-full h-full object-cover" />
+          <img
+            src={bomdongImg}
+            alt="봄동 비빔밥"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <div className="px-[16px] pt-[24px]">
@@ -56,17 +63,17 @@ const Qhaehdqlqlaqkq = () => {
               <button className="w-[24px] h-[24px] flex items-center justify-center bg-[#EBF5E6] rounded-full">
                 <img src={minusIcon} alt="감소" className="w-[12px] h-[12px]" />
               </button>
-              
+
               <span className="text-[16px] font-medium text-black">
                 1 <span className="text-[14px]">인분</span>
               </span>
-              
+
               {/* 증가 버튼: 24x24 원형 배경 */}
               <button className="w-[24px] h-[24px] flex items-center justify-center bg-[#EBF5E6] rounded-full">
                 <img src={plusIcon} alt="증가" className="w-[12px] h-[12px]" />
               </button>
             </div>
-            
+
             <div className="flex gap-[8px]">
               <div className="h-[24px] bg-[#E8E8EA] px-[8px] py-[4px] rounded-[4px] text-[10px] flex items-center gap-[4px]">
                 <img src={starIcon} alt="star" className="w-[12px] h-[12px]" />
@@ -81,24 +88,51 @@ const Qhaehdqlqlaqkq = () => {
 
           {/* 6. 탭 메뉴 */}
           <div className="w-full h-[40px] flex bg-[#F4F4F4] rounded-[8px] p-[4px] mb-[20px]">
-            <button className="w-[171px] h-[32px] bg-white rounded-[100px] shadow-sm font-bold text-[14px] text-black">필요한 재료</button>
-            <button className="flex-1 text-[#A3A3A3] text-[14px]">조리 도구</button>
+            <button className="w-[171px] h-[32px] bg-white rounded-[100px] shadow-sm font-bold text-[14px] text-black">
+              필요한 재료
+            </button>
+            <button className="flex-1 text-[#A3A3A3] text-[14px]">
+              조리 도구
+            </button>
           </div>
 
           {/* 7. 재료 리스트: 민서님이 편하신 하드코딩 방식으로 유지합니다. */}
           <div className="flex flex-col border-t border-[#999999]">
-            <RecipeItem name="봄동" amount="100g (1단)" isSubstitutable={false} />
-            <RecipeItem name="밥" amount="200g (1공기)" isSubstitutable={false} />
-            <RecipeItem 
-              name="매실청" 
-              amount="1T 스푼" 
-              isSubstitutable={true} 
-              alternatives={[{ name: '설탕', amount: '1T 스푼' }, { name: '올리고당', amount: '1T 스푼' }]} 
+            <RecipeItem
+              name="봄동"
+              amount="100g (1단)"
+              isSubstitutable={false}
+            />
+            <RecipeItem
+              name="밥"
+              amount="200g (1공기)"
+              isSubstitutable={false}
+            />
+            <RecipeItem
+              name="매실청"
+              amount="1T 스푼"
+              isSubstitutable={true}
+              alternatives={[
+                { name: '설탕', amount: '1T 스푼' },
+                { name: '올리고당', amount: '1T 스푼' },
+              ]}
             />
             <RecipeItem name="된장" amount="1T 스푼" isSubstitutable={false} />
-            <RecipeItem name="고춧가루" amount="2.5 숟가락" isSubstitutable={false} />
-            <RecipeItem name="멸치액젓" amount="1.5T 스푼" isSubstitutable={false} />
-            <RecipeItem name="참기름" amount="2T 스푼" isSubstitutable={false} />
+            <RecipeItem
+              name="고춧가루"
+              amount="2.5 숟가락"
+              isSubstitutable={false}
+            />
+            <RecipeItem
+              name="멸치액젓"
+              amount="1.5T 스푼"
+              isSubstitutable={false}
+            />
+            <RecipeItem
+              name="참기름"
+              amount="2T 스푼"
+              isSubstitutable={false}
+            />
           </div>
         </div>
       </div>
