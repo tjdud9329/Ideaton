@@ -59,24 +59,28 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Home.jsx - 추천 레시피 섹션 */}
       <div className="w-full mt-[29px] pb-[100px]">
-        <div className="flex justify-between items-center w-full ">
+        <div className="flex justify-between items-center w-full mb-[12px]">
           <h3 className="font-bold text-[18px]">추천 레시피</h3>
           <div className="cursor-pointer">
             <img src={chevronIcon} alt="화살표" className="w-[24px] h-[24px]" />
           </div>
         </div>
-        <div className="mt-[12px] flex gap-[12px] cursor-pointer">
+
+        {/* flex-wrap을 추가하면 혹시나 데이터가 3개 이상일 때 
+          다음 줄로 넘어가면서 2개씩 예쁘게 정렬됩니다.
+        */}
+        <div className="flex flex-wrap gap-[12px] justify-between">
           {Recipes.map((item) => (
             <RecipeCard key={item.id} item={item} />
           ))}
         </div>
       </div>
-      <div>
-        <Navbar />
-      </div>
-    </div>
+
+      {/* 하단 네비게이션 바 */}
+      <Navbar />
+    </div> // 최상단 <div className="mx-[16px]"> 를 닫는 태그
   );
 };
-
 export default Home;
