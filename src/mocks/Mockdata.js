@@ -10,8 +10,8 @@ import soddlehlswkdrnr from '../assets/Food/naengi-soup.png';
 export const MyIngredients = [
   { id: 1, name: '양배추', weight: '400g', day: '2', image: didqocn },
   { id: 2, name: '치즈', weight: '50g', day: '8', image: clwm },
-  { id: 3, name: '파', weight: '100g', day: '20', image: Eomuk },
-  { id: 4, name: '어묵', weight: '300g', day: '23', image: Largegreenonion },
+  { id: 3, name: '파', weight: '100g', day: '20', image: Largegreenonion },
+  { id: 4, name: '어묵', weight: '300g', day: '23', image: Eomuk },
 ];
 
 export const Seasonal = [
