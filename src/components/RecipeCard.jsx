@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import bookmarkIcon from '../assets/Icon/bookmarkIcon.svg';
-import starIcon from '../assets/Icon/starIcon.svg';
-import clockIcon from '../assets/Icon/clockIcon.svg';
+
 const RecipeCard = ({ item }) => {
   const navigate = useNavigate();
 
@@ -11,11 +10,10 @@ const RecipeCard = ({ item }) => {
 
   return (
     <div
-      /* 1. 카드 전체 배경을 연한 회색(#F4F4F4)으로 설정 */
       className="flex flex-col w-[calc(50%-6px)] bg-[#F4F4F4] rounded-2xl overflow-hidden cursor-pointer shrink-0"
       onClick={() => navigate(`/recipe/${item.id}`)}
     >
-      {/* 2. 이미지 영역: 세로 높이를 160 -> 120으로 줄여서 더 슬림하게 만듦 */}
+      {/* 이미지 영역 */}
       <div className="relative w-full h-[120px] bg-[#D9D9D9] shrink-0">
         {item.image ? (
           <img
@@ -31,21 +29,45 @@ const RecipeCard = ({ item }) => {
         </div>
       </div>
 
-      {/* 3. 하단 정보 영역 (회색 배경 위에 텍스트) */}
+      {/* 하단 정보 영역 */}
       <div className="flex flex-col p-[10px]">
         <span className="font-bold text-[14px] text-[#333333] truncate">
           {item.title}
         </span>
 
-        {/* 배지 디자인: 배경보다 살짝 더 진하거나 밝은 회색으로 강조 */}
+        {/* 배지 디자인: 안쪽은 비우고 테두리 선만 살린 스타일 */}
         <div className="flex gap-[5px] mt-[8px]">
-          <div className="flex items-center gap-[3px] bg-white px-[6px] py-[3px] rounded-[4px] text-[10px] font-semibold text-[#555555] shadow-sm">
-            <img src={starIcon} alt="난이도" className="w-[10px] h-[10px]" />
+          {/* 1. 초급(난이도) 배지 - 빈 별 아이콘 */}
+          <div className="flex items-center gap-[3.5px] bg-[#F1FFE6] border border-[#7FC24B] px-[6px] py-[3px] rounded-[4px] text-[10px] font-bold text-[#7FC24B]">
+            {/* fill="none"으로 속을 비우고 stroke로 선만 초록색을 줍니다 */}
+            <svg
+              className="w-[11px] h-[11px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
             <span>{item.level}</span>
           </div>
 
-          <div className="flex items-center gap-[3px] bg-white px-[6px] py-[3px] rounded-[4px] text-[10px] font-semibold text-[#555555] shadow-sm">
-            <img src={clockIcon} alt="시간" className="w-[10px] h-[10px]" />
+          {/* 2. 시간 배지 - 시계 아이콘 */}
+          <div className="flex items-center gap-[3.5px] bg-[#F1FFE6] border border-[#7FC24B] px-[6px] py-[3px] rounded-[4px] text-[10px] font-bold text-[#7FC24B]">
+            <svg
+              className="w-[11px] h-[11px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
             <span>{item.time}</span>
           </div>
         </div>
