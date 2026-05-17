@@ -99,7 +99,8 @@ const Qhaehdqlqlaqkq = () => {
             <button className="w-[171px] h-[32px] bg-white rounded-[100px] shadow-sm font-medium text-[14px] text-black tracking-[-0.02em]">
               필요한 재료
             </button>
-            <button className="flex-1 text-[#737373] text-[14px] font-medium tracking-[-0.02em]">
+            {/* [정정] 피그마 인스펙터 가이드에 따라 글자 색상을 검정색(#000000)으로 완벽하게 수정 */}
+            <button className="flex-1 text-[#000000] text-[14px] font-medium tracking-[-0.02em]">
               조리 도구
             </button>
           </div>
@@ -149,7 +150,7 @@ const Qhaehdqlqlaqkq = () => {
         </div>
       </div>
 
-      {/* 8. 요리 시작 버튼: [최종 정정] 피그마 인스펙터 green/600 (#52AC0D) 적용 */}
+      {/* 8. 요리 시작 버튼 */}
       <div className="absolute bottom-[40px] left-0 w-full px-[16px] z-50">
         <button className="w-full h-[52px] bg-[#52AC0D] rounded-[16px] font-bold text-[16px] text-white shadow-md active:bg-[#438B0B] transition-colors">
           요리 시작
