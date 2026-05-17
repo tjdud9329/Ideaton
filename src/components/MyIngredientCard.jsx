@@ -25,7 +25,7 @@ const MyIngredientCard = ({ item }) => {
         </span>
       </div>
 
-      <div className="text-[14px] font-bold text-[#333333]">D-{item.day}</div>
+      <div className="text-[14px] font-bold text-[#FF3636]">D-{item.day}</div>
     </div>
   );
 };
