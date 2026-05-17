@@ -26,7 +26,7 @@ const Navbar = () => {
               <img src={upIcon} alt="비교" className="w-[24px] h-[24px]" />
             </div>
             <div className="h-[16px] pt-[5px]">
-              <p className="text-center text-[10px] text-[#999999]">비교</p>
+              <p className="text-center text-[10px] text-[#999999]">시세</p>
             </div>
           </div>
         </div>

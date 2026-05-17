@@ -4,6 +4,7 @@ import RecipeCard from '../components/RecipeCard';
 import Navbar from '../components/Layouts/Navbar';
 import bellIcon from '../assets/Icon/bellIcon.svg';
 import chevronIcon from '../assets/Icon/chevron-rightIcon.svg';
+import Logo from '../assets/Logo/logo.png';
 import { MyIngredients, Seasonal, Recipes } from '../mocks/Mockdata';
 import { useEffect } from 'react';
 
@@ -17,16 +18,20 @@ const usePageTitle = (title) => {
 const Home = () => {
   return (
     <div className="mx-[16px] ">
-      <div className=" flex overflow-y-auto no-scrollbar justify-between w-full h-[42px] mt-[42px]">
-        <h1 className="font-bold text-[28px]">로고</h1>
+      <div className=" flex overflow-y-auto no-scrollbar justify-between w-full h-[42px] mt-[63px]">
+        <img src={Logo} alt="로고" />
         <button>
           <img src={bellIcon} alt="알림" className="w-[24px] h-[24px]" />
         </button>
       </div>
-      <div className=" mt-[10px] ">
+      <div className=" mt-[15px] ">
         <p className="text-[16px]">반가워요! 지민님 🖐️</p>
         <h3 className="font-bold text-[20px]">
-          오늘 봄 제철 봄동비빔밥 어때요?
+          오늘{' '}
+          <span className="bg-gradient-to-t from-[#358531]/20 from-70% to-transparent to-50% px-1">
+            봄 제철 봄동비빔밥
+          </span>{' '}
+          어때요?
         </h3>
       </div>
       <div className=" flex items-center justify-center bg-[#F1FFE6] max-w-[121px] h-[30px] mt-[13px] border border-[#7FC24B] rounded-full px-[12px] py-[6px]">
