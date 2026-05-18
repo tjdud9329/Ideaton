@@ -18,11 +18,10 @@ const Qhaehdqlqlaqkq = () => {
   const [servings, setServings] = useState(1);
 
   return (
-    // 전체 컨테이너에 max-w-[390px]와 mx-auto를 주어 중앙 정렬을 유지합니다.
+    // 전체 컨테이너에 max-w-[390px]와 mx-auto를 주어 모바일 중앙 정렬을 유지합니다.
     <div className="flex flex-col min-h-screen bg-white relative overflow-x-hidden font-['Pretendard'] max-w-[390px] mx-auto border-x border-gray-100">
-      {/* 1. Status Bar (53px) */}
+      {/* 1. Status Bar (53px) - [수정] 지시사항에 따라 9:41 요소를 삭제하여 공백 처리 */}
       <div className="h-[53px] w-full pt-[18px] pr-[26px] pb-[14px] pl-[27px] flex justify-between items-end">
-        <span className="text-[15px] font-bold tracking-[-0.02em]">9:41</span>
         <div className="flex gap-1"></div>
       </div>
 
@@ -61,7 +60,7 @@ const Qhaehdqlqlaqkq = () => {
 
           {/* 5. 인분 조절 및 태그 */}
           <div className="flex justify-between items-center mb-[20px]">
-            <div className="w-[145px] h-[47px] flex items-center justify-between border border-[#7FC24B] rounded-[16px] px-[12px] py-[4px]">
+            <div className="w-[145px] h-[47px] flex items-center justify-between border border-[#52AC0D] rounded-[16px] px-[12px] py-[4px]">
               <button
                 onClick={() => setServings((prev) => (prev > 1 ? prev - 1 : 1))}
                 className="w-[24px] h-[24px] flex items-center justify-center bg-[#EBF5E6] rounded-full active:opacity-70 transition-opacity"
@@ -99,7 +98,6 @@ const Qhaehdqlqlaqkq = () => {
             <button className="w-[171px] h-[32px] bg-white rounded-[100px] shadow-sm font-medium text-[14px] text-black tracking-[-0.02em]">
               필요한 재료
             </button>
-            {/* [정정] 피그마 인스펙터 가이드에 따라 글자 색상을 검정색(#000000)으로 완벽하게 수정 */}
             <button className="flex-1 text-[#000000] text-[14px] font-medium tracking-[-0.02em]">
               조리 도구
             </button>
@@ -157,6 +155,7 @@ const Qhaehdqlqlaqkq = () => {
         </button>
       </div>
 
+      {/* 9. Home Indicator 영역 */}
       <div className="absolute bottom-0 w-full h-[30px] bg-white flex justify-center items-center">
         <div className="w-[134px] h-[5px] bg-black rounded-full"></div>
       </div>
